@@ -3,7 +3,7 @@
 
 
 # BetterBlacket
-Reupload of [Death](https://github.com/VillainsRule)'s BetterBlacket with added plugins as well as no bannable plugins that violate blacket's [TOS](https://blacket.org/terms/), ex. Bazaar sniper/Deaf bot.
+Reupload of [Death](https://github.com/VillainsRule)'s BetterBlacket with added plugins as well as no bannable plugins that violate [blacket](https://blacket.org/)'s [TOS](https://blacket.org/terms/), ex. Bazaar sniper/Deaf bot.
 
 If you want to see any new features or plugins added, feel free to DM me on Discord at: `dmrd`.
 
