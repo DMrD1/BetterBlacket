@@ -5,9 +5,8 @@ If you want to see any new features or plugins added, feel free to DM me on Disc
 
 
 # Installation Instructions
-To install this script using Tampermonkey, follow the steps below:
 
-## Step 1: Install Tampermonkey
+## _Step 1: Install Tampermonkey_
 If you don’t have Tampermonkey installed, you can get it for your browser here:
 
 [Google Chrome](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
