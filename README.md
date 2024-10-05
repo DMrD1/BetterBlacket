@@ -1,7 +1,12 @@
+![68747470733a2f2f692e696d6775722e636f6d2f4b5770335037532e706e67](https://github.com/user-attachments/assets/a0c17cc6-56b9-4f3b-a5bc-e4672cb5f85e)
+
+
+
 # BetterBlacket
 Reupload of Death's BetterBlacket with added plugins.
 
 If you want to see any new features or plugins added, feel free to DM me on Discord at: `dmrd`.
+
 
 
 # Installation Instructions
