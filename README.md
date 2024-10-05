@@ -8,8 +8,11 @@ To install this script using Tampermonkey, follow the steps below:
 If you don’t have Tampermonkey installed, you can get it for your browser here:
 
 [Google Chrome](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
+
 [Mozilla Firefox](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/0)
+
 [Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd)
+
 ## Step 2: Install the Script
 Open Tampermonkey by clicking on the extension icon in your browser.
 Click on the + button (Add a new script).
