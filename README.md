@@ -6,7 +6,7 @@ If you want to see any new features or plugins added, feel free to DM me on Disc
 
 # Installation Instructions
 
-## _Step 1: Install Tampermonkey_
+## __Step 1: Install Tampermonkey__
 If you don’t have Tampermonkey installed, you can get it for your browser here:
 
 [Google Chrome](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
