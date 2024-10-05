@@ -16,6 +16,4 @@ If you don’t have Tampermonkey installed, you can get it for your browser here
 [Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd)
 
 ## Step 2: Install the Script
-Open Tampermonkey by clicking on the extension icon in your browser.
-Click on the + button (Add a new script).
-Replace the default code with the script from the GitHub repository.
+Once you have installed Tampermonkey, click [here](https://github.com/DMrD1/BetterBlacket/raw/refs/heads/main/bb.user.js) to install bb
