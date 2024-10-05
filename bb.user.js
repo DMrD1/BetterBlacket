@@ -3618,27 +3618,27 @@ const index$d = () => createPlugin({
                             <i class="styles__contextMenuItemIcon___2Zq3a-camelCase fa-solid fa-square"></i>
                         </div>
 
+                        <div class="styles__contextMenuItemContainer___m3Xa3-camelCase" id="message-context-check-tokens">
+                            <div class="styles__contextMenuItemName___vj9a3-camelCase">Check Tokens</div>
+                            <i class="styles__contextMenuItemIcon___2Zq3a-camelCase fa-regular fa-money-bill" style="transform: rotate(15deg);"></i>
+                        </div>
+
                         \${blacket.config.path !== "trade" ? \`<div class="styles__contextMenuItemContainer___m3Xa3-camelCase" id="message-context-quote">`
         },
         {
           // Match the click event handlers
           match: /\$\(`#message-context-copy-id`\)\.click\(\(\) => navigator\.clipboard\.writeText\(data\.message\.id\)\);/,
-          replace: `
-
-
-
-                              // Attach click events for the new context menu items
-                              $(\`#message-context-copy-id\`).click(() => navigator.clipboard.writeText(data.message.id));
+          replace: `$(\`#message-context-copy-id\`).click(() => navigator.clipboard.writeText(data.message.id));
                               $(\`#message-context-view-stats\`).click(() => window.location.assign("https://blacket.org/stats?name=" + data.author.username));
-                              $(\`#message-context-check-blooks\`).click(() => checkBlooks.checkBlooks(data.author.username));`
+                              $(\`#message-context-check-blooks\`).click(() => chatUtils.checkBlooks(data.author.username));
+                              $(\`#message-context-check-tokens\`).click(() => chatUtils.checkTokens(data.author.username));`
         }
       ]
     }
   ],
   onStart: () => {
-    window.checkBlooks = {
+    window.chatUtils = {
       checkBlooks: (username) => {
-        alert("Checking Blooks for " + username + "!");
         if (window.blacket.config.path != "blooks") {
           alert("This can only be run on the blooks page, sending you there");
           window.location.assign("https://blacket.org/blooks");
@@ -3699,6 +3699,41 @@ const index$d = () => createPlugin({
             });
           });
         }
+      },
+      checkTokens: (username) => {
+        axios.get("/worker2/user/" + username).then((response) => {
+          if (response.data && response.data.user) {
+            const user = response.data.user;
+            const avatar = user.avatar;
+            const color = user.color;
+            const tokens = user.tokens;
+            new bb.Modal({
+              title: `<img src="${avatar}" alt="Avatar" style="width: 2.344vw; height: 2.695vw; vertical-align: middle; margin-right: 0.2vw; margin-bottom: 0.2vw;" />
+                                    <a href='/stats?name=${username}' style="color: ${color}; text-decoration: none; font-weight: bold;">${username}</a>
+                                    has<br>${tokens.toLocaleString()} <img src="https://blacket.org/content/tokenIcon.webp" alt="Tokens" style="width: 1.563vw; height: 1.563vw;" />`,
+              buttons: [
+                { text: "Close" }
+              ]
+            });
+          } else {
+            new bb.Modal({
+              title: "User Not Found",
+              description: `Unable to fetch tokens for user: ${username}`,
+              buttons: [
+                { text: "Close" }
+              ]
+            });
+          }
+        }).catch((error) => {
+          console.error("Error fetching tokens:", error);
+          new bb.Modal({
+            title: "Error",
+            description: "There was an error fetching the user's tokens. Please try again later.",
+            buttons: [
+              { text: "Close" }
+            ]
+          });
+        });
       }
     };
   }
