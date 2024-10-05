@@ -1,2 +1,16 @@
 # BetterBlacket
-Reupload of Death's BetterBlacket with added plugins DM me on discord `dmrd` if you want to see anything added to it
+Reupload of Death's BetterBlacket with added plugins. If you want to see any new features or plugins added, feel free to DM me on Discord: dmrd.
+
+# Installation Instructions
+To install this script using Tampermonkey, follow the steps below:
+
+## Step 1: Install Tampermonkey
+If you don’t have Tampermonkey installed, you can get it for your browser here:
+
+(Google Chrome)[https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo]
+(Mozilla Firefox)[https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/]
+(Microsoft Edge)[https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd]
+## Step 2: Install the Script
+Open Tampermonkey by clicking on the extension icon in your browser.
+Click on the + button (Add a new script).
+Replace the default code with the script from the GitHub repository.
