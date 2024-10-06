@@ -3304,9 +3304,8 @@ const index$g = () => createPlugin({
     }
   ],
   quote: (data) => {
-    const msg = `╭ From <@${data.author.id}> ${localStorage.getItem("chatColor") ? "</c>" : ""} ${data.message.content}
+    const msg = `Γò¡ From <@${data.author.id}> ${localStorage.getItem("chatColor") ? "</c>" : ""} ${data.message.content}
 ${localStorage.getItem("chatColor") ? `<${localStorage.getItem("chatColor")}>` : ""}`;
-    console.log(msg);
     document.querySelector("#chatBox").value = msg;
     document.querySelector("#chatBox").focus();
     blacket.chat.update();
@@ -3599,12 +3598,27 @@ const index$e = () => createPlugin({
 const __vite_glob_0_6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({ __proto__: null, default: index$e }, Symbol.toStringTag, { value: "Module" }));
 const index$d = () => createPlugin({
   name: "Extra Chat Utils",
-  description: "Adds extra options to the chat context menu (r-click).",
+  description: "Adds extra options to the chat context menu (r-click), including join date tags.",
   authors: [{ name: "DMrD", avatar: "https://cdn.discordapp.com/avatars/830954336892485642/14e3f62b574dc6c829be7c62a13f601f?size=1024", url: "https://discord.gg/yGcwFJsx" }],
   patches: [
     {
       file: "/lib/js/game.js",
       replacement: [
+        {
+          match: /\$\{badges\}/,
+          replace: `
+                        \${badges}
+                        \${(() => {
+                            if (bb.plugins.settings['Extra Chat Utils']?.['Show Joined Tags (MAY CAUSE LAG!)'] && data.author.id) {
+                                setTimeout(() => {
+                                    $self.fetchJoinDate(data.author.id, data.message.id);
+                                }, 0);
+                                return '<span class="bb_joinedTag" id="join-tag-' + data.message.id + '">Loading...</span>';
+                            }
+                            return '';
+                        })()}
+                    `
+        },
         {
           // Match the context menu injection point
           match: /\$\{blacket\.config\.path !== "trade" \? `<div class="styles__contextMenuItemContainer___m3Xa3-camelCase" id="message-context-quote">/,
@@ -3635,6 +3649,22 @@ const index$d = () => createPlugin({
                               $(\`#message-context-check-tokens\`).click(() => $self.checkTokens(data.author.username));`
         }
       ]
+    }
+  ],
+  styles: `
+        .bb_joinedTag {
+            margin-left: 0.208vw;
+            background: #2f2f2f;
+            padding: 1px 8px;
+            border-radius: 10px;
+            font-size: 1vw;
+            color: white;
+        }
+    `,
+  settings: [
+    {
+      name: "Show Joined Tags (MAY CAUSE LAG!)",
+      default: false
     }
   ],
   checkBlooks: (username) => {
@@ -3715,6 +3745,20 @@ const index$d = () => createPlugin({
     }).catch((error) => {
       console.error("Error fetching tokens:", error);
       new bb.Modal({ title: "Error", description: "There was an error fetching the user's tokens. Please try again later.", buttons: [{ text: "Close" }] });
+    });
+  },
+  fetchJoinDate: (userId, messageId) => {
+    axios.get("/worker2/user/" + userId).then((response) => {
+      const createdTimestamp = response.data.user ? response.data.user.created : null;
+      if (createdTimestamp) {
+        const joinDate = new Date(createdTimestamp * 1e3).toLocaleDateString("en-US", { month: "2-digit", day: "2-digit", year: "2-digit" });
+        const joinTag = document.querySelector("#join-tag-" + messageId);
+        if (joinTag) {
+          joinTag.innerHTML = "Joined: " + joinDate;
+        }
+      }
+    }).catch((error) => {
+      console.error("Error fetching user join date:", error);
     });
   }
 });
