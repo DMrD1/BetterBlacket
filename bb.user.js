@@ -3615,7 +3615,7 @@ const index$d = () => createPlugin({
 
                         <div class="styles__contextMenuItemContainer___m3Xa3-camelCase" id="message-context-check-blooks">
                             <div class="styles__contextMenuItemName___vj9a3-camelCase">Check Blooks</div>
-                            <i class="styles__contextMenuItemIcon___2Zq3a-camelCase fa-solid fa-square"></i>
+                            <i class="styles__contextMenuItemIcon___2Zq3a-camelCase fa-solid fa-square" style="transform: rotate(15deg);></i>
                         </div>
                         
                         <div class="styles__contextMenuItemContainer___m3Xa3-camelCase" id="message-context-check-tokens">
