@@ -22,3 +22,11 @@ If you don’t have Tampermonkey installed, you can get it for your browser here
 
 ## Step 2: Install the Script
 Once you have installed Tampermonkey, click [here](https://github.com/DMrD1/BetterBlacket/raw/refs/heads/main/bb.user.js) to install bb
+
+## Step 3: How to use
+- Go to [Blacket](https://blacket.org)
+- Open the settings page
+- You should see the Better Blacket settings, if you don't, be sure you followed the previous steps correctly
+- Click on "Manage Plugins"
+- Turn on what you want
+- Reload for the changes to take effect
