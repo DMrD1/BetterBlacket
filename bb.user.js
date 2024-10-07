@@ -2710,7 +2710,7 @@ const index$k = () => createPlugin({
             overflow: auto;
             -ms-overflow-style: none;
             scrollbar-width: none;
-        }    
+        }
 
         .bb_opened::-webkit-scrollbar {
             display: none;
@@ -2964,7 +2964,7 @@ const index$j = () => createPlugin({
         .styles__bazaarItems___KmNa2-camelCase::-webkit-scrollbar {
             display: none;
         }
-        
+
         .styles__bazaarItems___KmNa2-camelCase {
             background-color: rgba(0, 0, 0, 0.33);
         }
@@ -3105,7 +3105,7 @@ const index$i = () => createPlugin({
                         <div class="styles__contextMenuItemName___vj9a3-camelCase">Trade</div>
                         <i class="styles__contextMenuItemIcon___2Zq3a-camelCase fas fa-hand-holding"></i>
                     </div>\` : ""}
-                    
+
                     \${blacket.config.path !== "trade" ? \`<div class="styles__contextMenuItemContainer___m3Xa3-camelCase" id="message-context-quote">`
         },
         {
@@ -3120,21 +3120,21 @@ const index$i = () => createPlugin({
         .styles__chatMessageContainer__G1Z4P-camelCase {
             padding: 1vw 1.5vw;
         }
-        
+
         .styles__chatContainer___iA8ZU-camelCase {
             height: calc(100% - 4.25vw);
         }
-        
+
         div[style="position: absolute;bottom: 0;width: 100%;"] {
             bottom: 1.25vw !important;
             left: 2vw;
             width: calc(100% - 3vw) !important;
         }
-        
+
         .styles__chatInputContainer___gkR4A-camelCase {
             border-radius: 10vw;
         }
-        
+
         .styles__chatUploadButton___g39Ac-camelCase,
         .styles__chatEmojiButton___8RFa2-camelCase {
             border-radius: 50%;
@@ -3304,7 +3304,7 @@ const index$g = () => createPlugin({
     }
   ],
   quote: (data) => {
-    const msg = `Γò¡ From <@${data.author.id}> ${localStorage.getItem("chatColor") ? "</c>" : ""} ${data.message.content}
+    const msg = `╭ From <@${data.author.id}> ${localStorage.getItem("chatColor") ? "</c>" : ""} ${data.message.content}
 ${localStorage.getItem("chatColor") ? `<${localStorage.getItem("chatColor")}>` : ""}`;
     document.querySelector("#chatBox").value = msg;
     document.querySelector("#chatBox").focus();
@@ -3434,7 +3434,7 @@ const index$f = () => createPlugin({
             text-align: center;
             top: 1vw;
         }
-        
+
         .bb_userSelector {
             position: absolute;
             top: calc(50% + 15.417vw);
@@ -3445,17 +3445,17 @@ const index$f = () => createPlugin({
             align-items: center;
             justify-content: space-evenly;
         }
-        
+
         .bb_userSelectBtn {
             margin: 0.521vw;
             width: 100%;
         }
-        
+
         .bb_userSelectText {
             width: 80%;
             justify-content: space-between;
         }
-        
+
         #bb_userSelectUsername {
             font-family: 'Titan One';
         }</style>
@@ -3584,7 +3584,7 @@ const index$e = () => createPlugin({
                 gap: 2vw;
                 padding: 2vw 1.5vw;
             }
-                
+
             .styles__topStats___3qffP-camelCase {
                 font-size: 1.8vw !important;
             }
@@ -3607,7 +3607,7 @@ const index$d = () => createPlugin({
         {
           match: /\$\{badges\}/,
           replace: `
-                        \${badges} 
+                        \${badges}
                         \${(() => {
                             if (bb.plugins.settings['Extra Chat Utils']?.['Show Joined Tags MAY CAUSE LAG'] && data.author.id) {
                                 setTimeout(() => {
@@ -3632,7 +3632,7 @@ const index$d = () => createPlugin({
                             <div class="styles__contextMenuItemName___vj9a3-camelCase">Check Blooks</div>
                             <i class="styles__contextMenuItemIcon___2Zq3a-camelCase fa-solid fa-square" style="transform: rotate(10deg);"></i>
                         </div>
-                        
+
                         <div class="styles__contextMenuItemContainer___m3Xa3-camelCase" id="message-context-check-tokens">
                             <div class="styles__contextMenuItemName___vj9a3-camelCase">Check Tokens</div>
                             <i class="styles__contextMenuItemIcon___2Zq3a-camelCase fa-sharp-duotone fa-regular fa-coins"></i>
@@ -3654,7 +3654,7 @@ const index$d = () => createPlugin({
   styles: `
         .bb_joinedTag {
             margin-left: 0.208vw;
-            background: #2f2f2f;
+            background: rgba(0, 0, 0, 0.3);
             padding: 1px 8px;
             border-radius: 10px;
             font-size: 1vw;
@@ -3736,7 +3736,7 @@ const index$d = () => createPlugin({
         const user = response.data.user;
         new bb.Modal({
           title: `<img src="${user.avatar}" alt="Avatar" style="width: 2.344vw; height: 2.695vw; vertical-align: middle; margin-right: 0.2vw; margin-bottom: 0.2vw;" />
-                            <a href='/stats?name=${username}' style="color: ${user.color}; text-decoration: none; font-weight: bold;">${username}</a> 
+                            <a href='/stats?name=${username}' style="color: ${user.color}; text-decoration: none; font-weight: bold;">${username}</a>
                             has<br>${user.tokens.toLocaleString()} <img src="https://blacket.org/content/tokenIcon.webp" alt="Tokens" style="width: 1.563vw; height: 1.563vw;" />`,
           buttons: [{ text: "Close" }]
         });
@@ -4320,7 +4320,7 @@ const index$a = () => createPlugin({
         input:checked + .slider:before {
             transform: translateX(13px);
         }
-        
+
         .bb_requiredPluginSlider {
             background-color: #075c9f;
             cursor: not-allowed;
@@ -4449,7 +4449,7 @@ const index$a = () => createPlugin({
             flex-direction: row;
             align-items: center;
         }
-    
+
         .bb_modalInput {
             border: none;
             height: 2.083vw;
@@ -5085,14 +5085,14 @@ const index$1 = () => createPlugin({
                         let createUsername = () => 'Username' + Math.round(Math.random() * 1000);
                         let discord = () => 'username' + Math.round(Math.random() * 1000);
                         let body = () => 'This body was generated by the Test Admin BetterBlacket Plugin. This is NOT a real form. If you are a staff, you can see real forms by disabling this plugin. '.repeat(Math.round(Math.random() * 3));
-                    
+
                         let createForm = () => ({
                             username: createUsername(),
                             age: createAge(),
                             discord: discord(),
                             body: body()
                         });
-                    
+
                         new Array(69).fill().map(() => createForm())`
         }
       ]
