@@ -3659,6 +3659,7 @@ const index$d = () => createPlugin({
             border-radius: 10px;
             font-size: 1vw;
             color: white;
+            cursor: auto;
         }
     `,
   settings: [
